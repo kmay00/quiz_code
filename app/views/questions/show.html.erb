@@ -22,12 +22,12 @@
     <% @answers.shuffle.each_with_index do |answer, index| %>
       <tr>
         <td><%= (index + 1) %></td>
-        <td><%= answer.possible_answer %></td>
+        <td><%= button_to answer.possible_answer, {:controller => "questions", :action => "show", :id => @next_question}, :method => :get %></td>
 
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<br/>
 <%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'Back', quiz_path(@question.quiz_id) %>
