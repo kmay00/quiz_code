@@ -5,10 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Answer 1</th>
-      <th>Answer 2</th>
-      <th>Answer 3</th>
-      <th>Answer 4</th>
+      <th>Possible Answer</th>
+      <th>Is Correct</th>
+      <th>Question ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +15,9 @@
   <tbody>
     <% @answers.each do |answer| %>
       <tr>
-        <td><%= answer.answer_1 %></td>
-        <td><%= answer.answer_2 %></td>
-        <td><%= answer.answer_3 %></td>
-        <td><%= answer.answer_4 %></td>
+        <td><%= answer.possible_answer %></td>
+        <td><%= answer.is_correct %></td>
+        <td><%= answer.question_id %></td>
         <td><%= link_to 'Show', answer %></td>
         <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
         <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,1 +1,1 @@
-json.extract! @question, :id, :title, :question, :correct_answer, :created_at, :updated_at
+json.extract! @question, :id, :question_asked, :quiz_id, :created_at, :updated_at

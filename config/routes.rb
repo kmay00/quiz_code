@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'static/welcome'
-
-  get 'static/signup'
-
-  get 'static/about'
 
   resources :students
   resources :quizzes do 
@@ -14,7 +9,8 @@ Rails.application.routes.draw do
   end
   resources :answers
 
-  get '/' => 'static#index'
+  get '/' => 'static#welcome'
+  get 'about' => 'static#about'
 
   get 'signup' => 'students#new'
 

@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Answer 1:</strong>
-  <%= @answer.answer_1 %>
+  <strong>Possible Answer:</strong>
+  <%= @answer.possible_answer %>
 </p>
 
 <p>
-  <strong>Answer 2:</strong>
-  <%= @answer.answer_2 %>
+  <strong>Is Correct:</strong>
+  <%= @answer.is_correct %>
 </p>
 
 <p>
-  <strong>Answer 3:</strong>
-  <%= @answer.answer_3 %>
-</p>
-
-<p>
-  <strong>Answer 4:</strong>
-  <%= @answer.answer_4 %>
+  <strong>Question ID:</strong>
+  <%= @answer.question_id %>
 </p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |
