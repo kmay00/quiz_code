@@ -11,6 +11,14 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
     @answers = @question.answers
+    @quiz_questions = @question.quiz.questions
+    @position = @quiz_questions.index { |q| q.id == @question.id }
+    if @position == (@quiz_questions.length - 1)
+      @next_position = @position
+    else
+      @next_position = @position + 1
+    end
+    @next_question = @quiz_questions[@next_position].id
   end
 
   # GET /questions/new
