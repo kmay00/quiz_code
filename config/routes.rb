@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  resources :answers
-  resources :questions
-  resources :quizzes
   resources :students
+  resources :quizzes do 
+    resources :questions, shallow: true
+  end
+  resources :questions do
+    resources :answers, shallow: true
+  end
+  resources :answers
+
+  get '/' => 'static#index'
+
+  get 'signup' => 'students#new'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -12,10 +22,26 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  get 'quizzes' => 'quizzes#index'
-  get 'quizzes/new' => 'quizzes#new'
-  get 'quizzes/:id' => 'quizzes#show'
-  get 'quizzes/:id/edit' => 'quizzes#edit'
+  get 'profile' => 'students#show'
+
+  # namespace :admin do
+  #   resources :answers, :questions, :quizzes
+  #   get 'admin/quizzes' => 'admin/quizzes#index'
+  #   get 'admin/quizzes/new' => 'admin/quizzes#new'
+  #   post 'admin/quizzes' => 'admin/quizzes#create'
+  #   get 'admin/quizzes/:id' => 'admin/quizzes#show'
+  #   get 'admin/quizzes/:id/edit' => 'admin/quizzes#edit'
+  #   put 'admin/quizzes/:id' => 'admin/quizzes#update'
+  #   delete 'admin/quizzes/:id' => 'admin/quizzes#destroy'
+  # end
+
+  # get 'quizzes/:quiz_id/questions' => 'questions#index'
+  # get 'quizzes/:quiz_id/questions/new' => 'questions#new'
+  # post 'quizzes/:quiz_id/questions' => 'questions#create'
+  # get 'quizzes/:quiz_id/questions:id' => 'questions#show'
+  # get 'quizzes/:quiz_id/questions/:id/edit' => 'questions#edit'
+  # put 'quizzes/:quiz_id/questions/:id' => 'questions#update'
+  # delete 'quizzes/:quiz_id/questions/:id' => 'questions#destroy'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
