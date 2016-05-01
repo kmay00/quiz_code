@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'static/welcome'
+
+  get 'static/signup'
+
+  get 'static/about'
+
   resources :students
   resources :quizzes do 
     resources :questions, shallow: true
