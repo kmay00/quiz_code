@@ -120,10 +120,10 @@ quiz_list.each do |name|
   Quiz.create( name: name )
 end
 
-question_list.each do |question, quiz_id|
-  Question.create( question: question, quiz_id: quiz_id )
+question_list.each do |question_asked, quiz_id|
+  Question.create( question_asked: question_asked, quiz_id: quiz_id )
 end
 
-answer_list.each do |answer, is_correct, question_id|
-  Answer.create( answer: answer, is_correct: is_correct, question_id: question_id )
+answer_list.each do |possible_answer, is_correct, question_id|
+  Answer.create( possible_answer: possible_answer, is_correct: is_correct, question_id: question_id )
 end
