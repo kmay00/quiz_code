@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'signup' => 'students#new'
 
   get 'quizzes/:id/summary', to: 'quizzes#summary', as: :summary
+  post 'quizzes/:id/summary', to: 'quizzes#email', as: :email 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,14 +2,18 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center blue-text text-lighten-2">Take a Quiz</h1>
+        <h1 class="header center white-text text-lighten-2">Welcome</h1>
         <div class="row center">
-          <h5 class="header col s12 light">Some bullshit text</h5>
+          <br><br>
         </div>
         <div class="row center">
-          <a href="/" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Get Started</a>
+         <% if current_user %>
+              <a href="/quizzes" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Let's Get Started</a>
+            <% else %>
+              <a href="/login" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Let's Get Started</a>
+            <% end %>
         </div>
-        
+
       </div>
     </div>
   </div>

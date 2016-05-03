@@ -27,6 +27,11 @@ class QuizzesController < ApplicationController
     @quiz_answers = StudentAnswer.get_quiz_results
   end
 
+  def email
+    Quiz.email_results
+    redirect_to summary_path(id: @quiz.id)
+  end
+
   # POST /quizzes
   # POST /quizzes.json
   def create
