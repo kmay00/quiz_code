@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 quiz_list = [
-  "Quiz1", "Quiz2"
+  "Quiz1", "Quiz2", "Quiz3", "Quiz4"
 ]
 
 question_list = [
@@ -17,20 +17,24 @@ question_list = [
   ["Question4", 1],
   ["Question5", 1],
   ["Question6", 1],
-  ["Question7", 1],
-  ["Question8", 1],
-  ["Question9", 1],
-  ["Question10", 1],
   ["Question1", 2],
   ["Question2", 2],
   ["Question3", 2],
   ["Question4", 2],
   ["Question5", 2],
   ["Question6", 2],
-  ["Question7", 2],
-  ["Question8", 2],
-  ["Question9", 2],
-  ["Question10", 2]
+  ["Question1", 3],
+  ["Question2", 3],
+  ["Question3", 3],
+  ["Question4", 3],
+  ["Question5", 3],
+  ["Question6", 3],
+  ["Question1", 4],
+  ["Question2", 4],
+  ["Question3", 4],
+  ["Question4", 4],
+  ["Question5", 4],
+  ["Question6", 4],
 ]
 
 answer_list = [
@@ -113,7 +117,23 @@ answer_list = [
   ["Answer", true, 20],
   ["WrongAnswer1", false, 20],
   ["WrongAnswer2", false, 20],
-  ["WrongAnswer3", false, 20]
+  ["WrongAnswer3", false, 20],
+  ["Answer", true, 21],
+  ["WrongAnswer1", false, 21],
+  ["WrongAnswer2", false, 21],
+  ["WrongAnswer3", false, 21],
+  ["Answer", true, 22],
+  ["WrongAnswer1", false, 22],
+  ["WrongAnswer2", false, 22],
+  ["WrongAnswer3", false, 22],
+  ["Answer", true, 23],
+  ["WrongAnswer1", false, 23],
+  ["WrongAnswer2", false, 23],
+  ["WrongAnswer3", false, 23],
+  ["Answer", true, 24],
+  ["WrongAnswer1", false, 24],
+  ["WrongAnswer2", false, 24],
+  ["WrongAnswer3", false, 24],
 ]
 
 quiz_list.each do |name|

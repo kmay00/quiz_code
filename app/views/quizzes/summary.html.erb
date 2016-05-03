@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @quiz.name %>
+</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Question</th>
+      <th>Chosen Answer</th>
+      <th>Correct Answer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quiz_answers.each_with_index do |qa, index| %>
+      <tr>
+        <td><%= (index + 1) %></td>
+        <td><%= qa[:question] %></td>
+        <td><%= qa[:picked_answer] %></td>
+        <td><%= qa[:correct_answer] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <strong>Get your results emailed to you!</strong>
+</p>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

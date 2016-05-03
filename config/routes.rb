@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'signup' => 'students#new'
 
+  get 'quizzes/:id/summary', to: 'quizzes#summary', as: :summary
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   get 'profile' => 'students#show'
+
+  post 'questions/:id' => 'questions#student_answer'
 
   # namespace :admin do
   #   resources :answers, :questions, :quizzes
