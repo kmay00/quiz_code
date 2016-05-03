@@ -28,8 +28,8 @@ class QuizzesController < ApplicationController
   end
 
   def email
-    Quiz.email_results
-    redirect_to summary_path(id: @quiz.id)
+    Quiz.email_results(params[:message], current_user.email)
+    redirect_to summary_path(id: params[:id])
   end
 
   # POST /quizzes
