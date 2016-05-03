@@ -15,11 +15,21 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @quiz_questions.each_with_index do |question, index| %>
+<!--   <tbody>
+    <% #@quiz_questions.each_with_index do |question, index| %>
       <tr>
-        <td><%= (index + 1) %></td>
-        <td><%= question.question_asked %></td>
+        <td><%# (index + 1) %></td>
+        <td><%# question.question_asked %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table> -->
+
+  <tbody>
+    <% (@quiz_questions.length - 1).times do |i| %>
+      <tr>
+        <td><%= (i + 1) %></td>
+        <td><%= @quiz_questions[i].question_asked %></td>
       </tr>
     <% end %>
   </tbody>

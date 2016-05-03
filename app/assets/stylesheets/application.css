@@ -7,3 +7,55 @@ html {
   background-repeat: none;
   background-size: 100%;
 }
+
+table {
+  border-collapse: separate;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#main_body {
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  height: 100%;
+  position: absolute;
+  max-width: none;
+  width: 100%;
+}
+
+#left-buffer {
+  height: 100%;
+  position: fixed;
+  max-width: none;
+  width: 100px;
+  margin-right: 100px;
+}
+
+.possible_answer {
+  padding: 10px;
+  color: red;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.fix-case {
+  text-transform: none;
+}
+
+.remove-padding {
+  padding: none;
+}
+
+.blue:hover {
+  background-color: #61C6FF !important;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

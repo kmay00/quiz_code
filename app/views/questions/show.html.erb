@@ -25,7 +25,7 @@
   <tbody>
     <% @answers.shuffle.each_with_index do |answer, index| %>
       <tr>
-        <td><%= (index + 1) %></td>
+        <td class="bold-text"><%= (index + 1) %></td>
         <td>
           <%#
             link_to_if(@next_question.nil?, answer.possible_answer, {controller: "quizzes", action: "summary", id: @question.quiz_id}) do
@@ -34,7 +34,7 @@
           %>
 
 
-          <%= button_to answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer" %>
+          <%= button_to answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "btn-large waves-effect waves-light blue lighten-1 fix-case" %>
 
           <%# link_to_if(@next_question.nil?, answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer") do
           link_to answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer"

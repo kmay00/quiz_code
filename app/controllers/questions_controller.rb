@@ -33,6 +33,22 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # def show
+  #   @answers = @question.answers
+  #   @quiz_questions = @question.quiz.questions
+  #   # @quiz_questions.push(Question.new)
+  #   @position = @quiz_questions.index { |q| q.id == @question.id }
+  #   if @position == (@quiz_questions.length )
+  #     # @next_position = @position
+  #     # @next_question = @quiz_questions[@next_position].id
+  #     redirect_to summary_path(id: @question.quiz.id)
+  #   else
+  #     @next_position = @position + 1 
+  #     @hot_fix =  @quiz_questions[@next_position] || @quiz_questions.last
+  #     @next_question = @hot_fix.id
+  #   end
+  # end
+
   # GET /questions/new
   def new
     @question = Question.new
