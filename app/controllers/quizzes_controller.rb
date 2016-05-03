@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :summary]
 
   # GET /quizzes
   # GET /quizzes.json
@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
-    @questions = @quiz.questions
+    @quiz_questions = @quiz.questions
   end
 
   # GET /quizzes/new
@@ -20,6 +20,11 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1/edit
   def edit
+  end
+
+  # GET /quizzes/1/summary
+  def summary
+    @quiz_answers = StudentAnswer.get_quiz_results
   end
 
   # POST /quizzes

@@ -10,6 +10,10 @@
   <%= @question.quiz_id %>
 </p>
 
+<% unless @response.nil? %>
+  <%= @response %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -22,12 +26,27 @@
     <% @answers.shuffle.each_with_index do |answer, index| %>
       <tr>
         <td><%= (index + 1) %></td>
-        <td><%= button_to answer.possible_answer, {:controller => "questions", :action => "show", :id => @next_question}, :method => :get %></td>
+        <td>
+          <%#
+            link_to_if(@next_question.nil?, answer.possible_answer, {controller: "quizzes", action: "summary", id: @question.quiz_id}) do
+              link_to answer.possible_answer, {:controller => "questions", :action => "show", :id => @next_question}, :method => :get, :class => "possible_answer"
+            end
+          %>
 
+
+          <%= button_to answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer" %>
+
+          <%# link_to_if(@next_question.nil?, answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer") do
+          link_to answer.possible_answer, {:controller => "questions", :action => "student_answer", :answer_id => answer.id, :question_id => answer.question_id, :id => @next_question}, :method => :post, :class => "possible_answer"
+          end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br/>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', quiz_path(@question.quiz_id) %>
+<%= link_to 'Back', quiz_path(@question.quiz_id) %> |
+<%= link_to 'Summary', summary_path(@question.quiz_id) %>

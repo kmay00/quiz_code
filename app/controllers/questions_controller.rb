@@ -7,18 +7,30 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def student_answer
+    StudentAnswer.create(answer_id: params[:answer_id], question_id: params[:question_id])
+    if params[:id].nil?
+      redirect_to summary_path(id: @question.quiz.id)
+    else
+      redirect_to question_path
+    end
+  end
+
   # GET /questions/1
   # GET /questions/1.json
   def show
     @answers = @question.answers
     @quiz_questions = @question.quiz.questions
+    # @quiz_questions.push(Question.new)
     @position = @quiz_questions.index { |q| q.id == @question.id }
     if @position == (@quiz_questions.length - 1)
-      @next_position = @position
+      # @next_position = @position
+      # @next_question = @quiz_questions[@next_position].id
+      redirect_to summary_path(id: @question.quiz.id)
     else
       @next_position = @position + 1
+      @next_question = @quiz_questions[@next_position].id
     end
-    @next_question = @quiz_questions[@next_position].id
   end
 
   # GET /questions/new
