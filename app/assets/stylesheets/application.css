@@ -10,10 +10,12 @@ html {
 
 table {
   border-collapse: separate;
+  width: 50%;
+  
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
