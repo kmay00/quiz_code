@@ -1,15 +1,17 @@
-<h1>Log In</h1>
+<h1 class="header center red-text text-lighten-1 blur-shadow">Log In</h1>
 
 <%= form_tag sessions_path do %>
-  <div class="field">
+  <div class="field center">
     <%= label_tag :email %><br>
     <%= text_field_tag :email %>
   </div>
-  <div class="field">
+  <div class="field center">
     <%= label_tag :password %><br>
     <%= password_field_tag :password %>
   </div>
-  <div class"actions">
-    <%= submit_tag "Log In" %>
+  <div class="center">
+    <div class="actions center btn-large waves-effect waves-light blue lighten-1">
+      <%= submit_tag "Log In" %>
+    </div>
   </div>
 <% end %>

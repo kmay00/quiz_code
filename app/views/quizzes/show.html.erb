@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
+<h1 class="header center red-text text-lighten-1 blur-shadow">
   <%= @quiz.name %>
 </h1>
 
-<strong><%= link_to "Click here", {:controller => "questions", :action => "show", :id => @quiz_questions.first}, :method => :get %> to start the quiz!</strong>
+<h4 class="center"><%= link_to "Click here", {:controller => "questions", :action => "show", :id => @quiz_questions.first}, :method => :get %> to start the quiz!</h4>
 
-<table>
+<table class="center-block">
   <thead>
     <tr>
       <th>#</th>

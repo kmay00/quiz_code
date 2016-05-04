@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
+<h1 class="header center red-text text-lighten-1 blur-shadow">
   <%= @quiz.name %>
 </h1>
 
-<table>
+<table class="center-block">
   <thead>
     <tr>
       <th>#</th>
@@ -26,14 +26,13 @@
   </tbody>
 </table>
 
-<% @message = @quiz_answers.first[:question] %>
-<%= debug @message %>
+<div class="center">
+  <p>
+    <strong>Get your results emailed to you!</strong>
+    <%= button_to "Email ", {:controller => "quizzes", :action => "email", :message => @message, id: @quiz.id }, :method => :post, :class => "btn-large waves-effect waves-light blue lighten-1" %>   
+  </p>
+</div>
 
-<p>
-  <strong>Get your results emailed to you!</strong>
-  <%= button_to "Email ", {:controller => "quizzes", :action => "email", :message => @message, id: @quiz.id }, :method => :post, :class => "btn-large waves-effect waves-light blue lighten-1" %>   
-</p>
 
-
-<%#= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%#= link_to 'Back', quizzes_path %>
+<!-- <%#= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%#= link_to 'Back', quizzes_path %> -->

@@ -11,23 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field center">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
+  <div class="field center">
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
-  <div class="field">
+  <div class="field center">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="field center">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="center">
+    <div class="actions center btn-large waves-effect waves-light blue lighten-1" id="force-center">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>

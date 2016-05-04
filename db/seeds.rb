@@ -6,16 +6,33 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 quiz_list = [
-  "Quiz1", "Quiz2", "Quiz3", "Quiz4"
+  "Ruby Basics", "Intermediate Ruby", "Hard as a Ruby", "Polish Them Gems"
 ]
 
 question_list = [
-  ["Question1", 1],
-  ["Question2", 1],
-  ["Question3", 1],
-  ["Question4", 1],
-  ["Question5", 1],
+  ["For an array \"x = [1, 2, 3, 4]\", which does not return the value 4?", 1],
+  ["How do you determine the type of an object in ruby?", 1],
+  ["What will return the number of characters in \"QuizCode\"?", 1],
+  ["Which is not a valid ruby variable?", 1],
+  ["Which of the following will not add a 4 to array x?", 1],
   ["Question6", 1],
   ["Question1", 2],
   ["Question2", 2],
@@ -38,26 +55,26 @@ question_list = [
 ]
 
 answer_list = [
-  ["Answer", true, 1],
-  ["WrongAnswer1", false, 1],
-  ["WrongAnswer2", false, 1],
-  ["WrongAnswer3", false, 1],
-  ["Answer", true, 2],
-  ["WrongAnswer1", false, 2],
-  ["WrongAnswer2", false, 2],
-  ["WrongAnswer3", false, 2],
-  ["Answer", true, 3],
-  ["WrongAnswer1", false, 3],
-  ["WrongAnswer2", false, 3],
-  ["WrongAnswer3", false, 3],
-  ["Answer", true, 4],
-  ["WrongAnswer1", false, 4],
-  ["WrongAnswer2", false, 4],
-  ["WrongAnswer3", false, 4],
-  ["Answer", true, 5],
-  ["WrongAnswer1", false, 5],
-  ["WrongAnswer2", false, 5],
-  ["WrongAnswer3", false, 5],
+  ["x.last", false, 1],
+  ["x[-1]", false, 1],
+  ["x[3]", false, 1],
+  ["x[4]", true, 1],
+  [".type", false, 2],
+  [".inspect", false, 2],
+  [".method", false, 2],
+  [".class", true, 2],
+  [".length", true, 3],
+  [".string", false, 3],
+  [".count", false, 3],
+  [".chars", false, 3],
+  ["!name", true, 4],  
+  ["@name", false, 4],
+  ["$name", false, 4],
+  ["name", false, 4],
+  ["x << 4", false, 5],
+  ["x + 4", true, 5],
+  ["x[3] = 4", false, 5],
+  ["x.push 4", false, 5],
   ["Answer", true, 6],
   ["WrongAnswer1", false, 6],
   ["WrongAnswer2", false, 6],

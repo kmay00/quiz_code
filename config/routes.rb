@@ -17,8 +17,6 @@ Rails.application.routes.draw do
   get '/' => 'static#welcome'
   get 'about' => 'static#about'
 
-  get 'signup' => 'students#new'
-
   get 'quizzes/:id/summary', to: 'quizzes#summary', as: :summary
   post 'quizzes/:id/summary', to: 'quizzes#email', as: :email 
 
