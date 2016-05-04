@@ -28,7 +28,7 @@ class QuizzesController < ApplicationController
   end
 
   def email
-    Quiz.email_results(params[:message], current_user.email)
+    Quiz.email_results(params[:message], (current_user.nil? ? 'nickerson.brian@gmail.com' : current_user.email))
     redirect_to summary_path(id: params[:id])
   end
 
