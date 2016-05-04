@@ -1,20 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h5 class="center">
-  <strong>Quiz ID</strong>
-  <%= @question.quiz_id %>
-</h5>
+<h3 class="center bold">
+  <%= @question.quiz.name %>
+</h3>
 
-<h6 class="center">
+<h5 class="center">
   <strong>Question:</strong>
   <%= @question.question_asked %>
-</h6  >
+</h5>
 
-<% unless @response.nil? %>
-  <%= @response %>
-<% end %>
-
-<br/><br/><br/>
+<br/><br/>
 
 <!-- <table class="center-block">
   <thead>
@@ -27,7 +22,7 @@
   <!-- <tbody> -->
     <% @answers.shuffle.each_with_index do |answer, index| %>
       <!-- <tr>
-        <td class="bold-text"><%= (index + 1) %></td>
+        <td class="bold-text"><%#= (index + 1) %></td>
         <td> -->
           <%#
             link_to_if(@next_question.nil?, answer.possible_answer, {controller: "quizzes", action: "summary", id: @question.quiz_id}) do

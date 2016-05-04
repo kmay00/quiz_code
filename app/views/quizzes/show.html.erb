@@ -4,14 +4,13 @@
   <%= @quiz.name %>
 </h1>
 
-<h4 class="center"><%= link_to "Click here", {:controller => "questions", :action => "show", :id => @quiz_questions.first}, :method => :get %> to start the quiz!</h4>
+<h3 class="center bold"><%= link_to "Start the quiz!", {:controller => "questions", :action => "show", :id => @quiz_questions.first}, :method => :get %></h3>
 
 <table class="center-block">
   <thead>
     <tr>
-      <th>#</th>
-      <th>Question</th>
-      <th colspan="1"></th>
+      <th class="bold-text">#</th>
+      <th class="bold-text">Questions</th>
     </tr>
   </thead>
 
@@ -28,8 +27,8 @@
   <tbody>
     <% (@quiz_questions.length - 1).times do |i| %>
       <tr>
-        <td><%= (i + 1) %></td>
-        <td><%= @quiz_questions[i].question_asked %></td>
+        <td class="bold-text"><%= (i + 1) %></td>
+        <td class="bold-text"><%= @quiz_questions[i].question_asked %></td>
       </tr>
     <% end %>
   </tbody>
