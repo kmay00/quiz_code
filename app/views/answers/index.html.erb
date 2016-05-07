@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Question</th>
       <th>Possible Answer</th>
       <th>Is Correct</th>
       <th>Question ID</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @answers.each do |answer| %>
       <tr>
+        <td><%= answer.question_id.question_asked %></td>
         <td><%= answer.possible_answer %></td>
         <td><%= answer.is_correct %></td>
         <td><%= answer.question_id %></td>
